@@ -4,11 +4,16 @@
   "description": "Web worker object with the ability to do RPC",
   "main": "lib/index.js",
   "scripts": {
-    "test": "nodeunit tests/"
+    "test": "nodeunit tests/",
+    "build": "coffee -cm -o lib/ src/*.coffee",
+    "build-example": "browserify -d --extension .coffee examples/index.coffee -o examples/index.js -t [ coffeeify ]",
+    "watch-example": "watchify -d --extension .coffee examples/index.coffee -o examples/index.js -t [ coffeeify ]",
+    "serve-example": "http-server examples/",
+    "develop-example": "concurrent 'npm run watch-example' 'npm run serve-example'"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/websecurify/wurker.git"
+    "url": "git+https://github.com/websecurify/node-wurker.git"
   },
   "keywords": [
     "worker",
@@ -20,5 +25,17 @@
   "bugs": {
     "url": "https://github.com/websecurify/wurker/issues"
   },
-  "homepage": "https://github.com/websecurify/wurker#readme"
+  "homepage": "https://github.com/websecurify/wurker#readme",
+  "devDependencies": {
+    "browserify": "^12.0.1",
+    "coffee-script": "^1.10.0",
+    "coffeeify": "^1.2.0",
+    "concurrently": "^1.0.0",
+    "http-server": "^0.8.5",
+    "nodeunit": "^0.9.1",
+    "watchify": "^3.6.1"
+  },
+  "browser": {
+    "wurker": "./src/index.coffee"
+  }
 }
