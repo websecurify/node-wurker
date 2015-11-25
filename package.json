@@ -1,0 +1,24 @@
+{
+  "name": "wurker",
+  "version": "1.0.0",
+  "description": "Web worker object with the ability to do RPC",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "nodeunit tests/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/websecurify/wurker.git"
+  },
+  "keywords": [
+    "worker",
+    "webworker",
+    "rpc"
+  ],
+  "author": "Websecurify",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/websecurify/wurker/issues"
+  },
+  "homepage": "https://github.com/websecurify/wurker#readme"
+}
