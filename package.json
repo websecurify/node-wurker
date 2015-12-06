@@ -1,6 +1,6 @@
 {
   "name": "wurker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Web worker object with the ability to do RPC",
   "main": "lib/index.js",
   "scripts": {
