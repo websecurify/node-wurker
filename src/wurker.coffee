@@ -7,7 +7,9 @@ module.exports = class
         @context.addEventListener 'message', @handleInvoke.bind @
 
     invoke: (method, args..., callback) ->
-        [args, callback] = [args.concat(callback), ->] if typeof(callback) isnt 'function'
+        if typeof(callback) isnt 'function'
+            args = args.concat callback if callback
+            callback = ->
 
         id = "invoke-#{Date.now()}-#{Math.random()}"
 
